@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  last_updated: 2021-04-03
+  name: MyString
+  email: MyString
+  title: MyString
+  phone: MyString
+  Status: MyString
+
+two:
+  last_updated: 2021-04-03
+  name: MyString
+  email: MyString
+  title: MyString
+  phone: MyString
+  Status: MyString
