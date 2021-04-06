@@ -10,38 +10,35 @@
       </ul>
     </div>
   <% end %>
+  <br/>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :last_updated %>
     <%= form.date_select :last_updated %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="field mb-3">
+    <%= form.text_field :name, class:"form-control", placeholder:"Name" %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="field mb-3">
+    <%= form.text_field :email, class:"form-control", placeholder:"Email"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="field mb-3">
+    <%= form.text_field :title, class:"form-control", placeholder:"Title"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
+  <div class="field mb-3">
+    <%= form.text_field :phone, class:"form-control", placeholder:"Phone"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :Status %>
-    <%= form.text_field :Status %>
+  <div class="field mb-3">
+    <%= form.text_field :Status, class:"form-control", placeholder:"Status"  %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit class:"btn btn-secondary" %>
+
+</div>
 <% end %>
