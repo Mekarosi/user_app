@@ -1,15 +1,19 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
+<%= form_with(model: user, local: true) do |form| %>
+<% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
         <% user.errors.each do |error| %>
           <li><%= error.full_message %></li>
-        <% end %>
+      <% end %>  
       </ul>
     </div>
-  <% end %>
+ <% end %>
+
+
+ 
+  
   <br/>
 
   <div class="field mb-3">
@@ -37,8 +41,17 @@
     <%= form.text_field :Status, class:"form-control", placeholder:"Status"  %>
   </div>
 
-  <div class="actions">
+ <div class="actions"> 
     <%= form.submit class:"btn btn-secondary" %>
-
-</div>
 <% end %>
+
+
+
+    
+
+
+
+
+
+
+ 
