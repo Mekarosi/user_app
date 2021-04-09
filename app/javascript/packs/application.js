@@ -8,6 +8,7 @@
 // require("channels")
 // require("local-time").start()
 
+//= require turbolinks
 
 // window.Rails = Rails
 
