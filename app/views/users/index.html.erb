@@ -16,17 +16,8 @@
 
   <tbody>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.last_updated %></td>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.title %></td>
-        <td><%= user.phone %></td>
-        <td><%= user.Status %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+     <%# Render table row partial for each person object %>
+      <%= render partial: 'table_row', locals: {user: user} %>
     <% end %>
   </tbody>
 </table>
@@ -40,7 +31,7 @@
 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
 </button>
 
