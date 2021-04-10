@@ -1,5 +1,6 @@
 
 <%# Conditionally set remote: true. Also, passing model name as data attribute %>
+
 <% modal ||= false %>
 <% remote = modal ? true : false %>
 <%= form_for(@user, remote: remote, html: {role: :form, 'data-model' => 'user'}) do |form| %>
@@ -20,6 +21,7 @@
   <div class="field mb-3">
     <%= form.label :last_updated %>
     <%= form.date_select :last_updated %> 
+
   </div>
 
 
