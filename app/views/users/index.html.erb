@@ -1,7 +1,9 @@
-
+<%= link_to 'Create New User', '#new_user_modal', 'data-bs-toggle' => 'modal', class:"btn btn-success"%>
+<br/>
+<br/>
 <h1>Users List</h1>
 
-<table class="table table-hover table-striped table-bordered">
+<table class="table table-hover table-striped table-bordered" id='users_table'>
   <thead class="table-dark">
     <tr>
       <th>Last updated</th>
@@ -16,17 +18,10 @@
 
   <tbody>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.last_updated %></td>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.title %></td>
-        <td><%= user.phone %></td>
-        <td><%= user.Status %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+     <%# Render table row partial for each user object %>
+
+      <%= render partial: 'table_row', locals: {user: user} %>
     <% end %>
   </tbody>
 </table>
@@ -36,6 +31,28 @@
  
 
 
-<%= link_to 'New User', new_user_path, class:"btn btn-success"  %>
+<%# Added Bootstrap data modal attribute %>
 
+<%= link_to 'Create New User', '#new_user_modal', 'data-bs-toggle' => 'modal', class:"btn btn-success"%>
 
+<%# Bootstrap modal markup. @see: http://getbootstrap.com/javascript/#modals %>
+
+<div class="modal fade" id="new_user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h4 class="modal-title" id="myModalLabel">Create new user</h4>
+      </div>
+      <div class="modal-body">
+
+        <%# Render the new person form (passing modal => true to enable remote => true) %>
+
+        <%= render 'form', modal: true %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
